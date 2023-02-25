@@ -193,7 +193,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication'
     ]
     
- CSRF_TRUSTED_ORIGINS = ['abaadsms-production.up.railway.app']
+
 
     
 }
@@ -201,3 +201,5 @@ REST_FRAMEWORK = {
 
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+
+CSRF_TRUSTED_ORIGINS = ['abaadsms-production.up.railway.app']
