@@ -192,6 +192,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication'
     ]
+    
+ CSRF_TRUSTED_ORIGINS = ['abaadsms-production.up.railway.app']
+
+    
 }
 
 
