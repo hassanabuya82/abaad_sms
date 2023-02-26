@@ -116,11 +116,11 @@ ASGI_APPLICATION = "SMS.asgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': railway,
-        'USER': root,
-        'PASSWORD': lX2iZ0DdEplaiukOcy8x,
-        'HOST': containers-us-west-135.railway.app,
-        'PORT': 7480,
+        'NAME': os.environ.get('MYSQL_DATABASE'),
+        'USER': os.environ.get('MYSQL_USER'),
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
+        'HOST': os.environ.get('MYSQL_HOST'),
+        'PORT': os.environ.get('MYSQL_PORT'),
     }
 }
 
