@@ -400,7 +400,7 @@ def course_registration_form(request):
     tbl_data = [
         [Paragraph("<b>Registration Number : " + request.user.username.upper() + "</b>", styles["Normal"])],
         [Paragraph("<b>Name : " + request.user.get_full_name.upper() + "</b>", styles["Normal"])],
-        [Paragraph("<b>Session : " + current_session.session.upper() + "</b>", styles["Normal"]), Paragraph("<b>Level: " + student.level + "</b>", styles["Normal"])
+        [Paragraph("<b>Session : " + current_session.session.upper() + "</b>", styles["Normal"]) + "</b>", styles["Normal"])
         ]]
     tbl = Table(tbl_data)
     Story.append(tbl)
