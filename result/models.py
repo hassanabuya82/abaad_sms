@@ -191,7 +191,7 @@ class TakenCourse(models.Model):
 
     def calculate_gpa(self, total_credit_in_semester):
         current_semester = Semester.objects.get(is_current_semester=True)
-        student = TakenCourse.objects.filter(student=self.student, course__level=self.student.level, course__semester=current_semester)
+        student = TakenCourse.objects.filter(student=self.student, course__semester=current_semester)
         p = 0
         point = 0
         for i in student:
