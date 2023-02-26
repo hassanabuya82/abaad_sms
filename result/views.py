@@ -139,7 +139,7 @@ def add_score_for(request, id):
                 a.save()
             except:
                 Result.objects.get_or_create(student=student.student, gpa=gpa, semester=current_semester,
-                                             session=current_session, level=student.student.level)
+                                             session=current_session)
 
             # try:
             #     a = Result.objects.get(student=student.student, semester=current_semester, level=student.student.level)
