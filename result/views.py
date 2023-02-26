@@ -252,10 +252,10 @@ def result_sheet_pdf_view(request, id):
     # Story.append(im_logo)
 
     # logo = settings.MEDIA_ROOT + "/logo/logo.png"
-    im = Image(logo, 1*inch, 1*inch)
-    im.__setattr__("_offs_x", -200)
-    im.__setattr__("_offs_y", -45)
-    Story.append(im)
+    #im = Image(logo, 1*inch, 1*inch)
+    #im.__setattr__("_offs_x", -200)
+    #im.__setattr__("_offs_y", -45)
+    #Story.append(im)
     
     style = getSampleStyleSheet()
     normal = style["Normal"]
