@@ -285,7 +285,7 @@ def result_sheet_pdf_view(request, id):
     normal.fontSize = 10
     normal.leading = 15
     level = result.filter(course_id=id).first()
-    title = "<b>Level: </b>" + Abaad-Begginer
+    title = "<b>Level: </b>" + "Abaad-Begginer"
     title = Paragraph(title.upper(), normal)
     Story.append(title)
     Story.append(Spacer(1,.6*inch))
