@@ -227,7 +227,7 @@ class TakenCourse(models.Model):
     
     def calculate_cgpa(self):
         current_semester = Semester.objects.get(is_current_semester=True)
-        previousResult = Result.objects.filter(student__id=self.student.id, level__lt=self.student.level)
+        previousResult = Result.objects.filter(student__id=self.student.id)
         previousCGPA = 0
         for i in previousResult:
             if i.cgpa is not None:
