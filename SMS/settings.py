@@ -28,7 +28,7 @@ SECRET_KEY = 'o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # 
-ALLOWED_HOSTS = ['https://abaadsms-production.up.railway.app','abaadsms-production.up.railway.app','abaad.aitt.co.ke', 'https://abaad.aitt.co.ke']
+ALLOWED_HOSTS = ['https://abaadsms-production-67c3.up.railway.app/','abaadsms-production-67c3.up.railway.app','abaad.aitt.co.ke', 'https://abaad.aitt.co.ke']
 
 # change the default user models to our custom model
 AUTH_USER_MODEL = 'accounts.User' 
@@ -104,25 +104,25 @@ ASGI_APPLICATION = "SMS.asgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # -----------------------------
 # Some model fields may not work on sqlite db, so configure your sql
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQLDATABASE'),
-        'USER': os.environ.get('MYSQLUSER'),
-        'PASSWORD': os.environ.get('MYSQLPASSWORD'),
-        'HOST': os.environ.get('MYSQLHOST'),
-        'PORT': os.environ.get('MYSQLPORT'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.environ.get('MYSQLDATABASE'),
+#         'USER': os.environ.get('MYSQLUSER'),
+#         'PASSWORD': os.environ.get('MYSQLPASSWORD'),
+#         'HOST': os.environ.get('MYSQLHOST'),
+#         'PORT': os.environ.get('MYSQLPORT'),
+#     }
+# }
 
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -203,4 +203,4 @@ REST_FRAMEWORK = {
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 
-CSRF_TRUSTED_ORIGINS = ['https://abaadsms-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://abaadsms-production-67c3.up.railway.app']
