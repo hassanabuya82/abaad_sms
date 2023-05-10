@@ -17,7 +17,7 @@
             <div class="col ml-auto">
                 {% if request.user.is_superuser or request.user.is_lecturer %}
                 <a class="add-button" href="{% url 'upload_file_view' course.slug %}"><i class="fas fa-plus"></i>
-                    Upload new file
+                    Upload file
                 </a>
                 
                 {% endif %}
