@@ -27,8 +27,8 @@ SECRET_KEY = 'o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# 
-ALLOWED_HOSTS = ['https://abaadsms-production-67c3.up.railway.app/','abaadsms-production-67c3.up.railway.app','abaad.aitt.co.ke', 'https://abaad.aitt.co.ke']
+# 'https://abaadsms-production-67c3.up.railway.app/','abaadsms-production-67c3.up.railway.app','abaad.aitt.co.ke', 'https://abaad.aitt.co.ke'
+ALLOWED_HOSTS = ['*']
 
 # change the default user models to our custom model
 AUTH_USER_MODEL = 'accounts.User' 
