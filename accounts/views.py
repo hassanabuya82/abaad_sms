@@ -340,3 +340,56 @@ class ParentAdd(CreateView):
 #             return redirect('student_list')
 #     else:
 #         form = ParentAddForm(request.POST)
+
+
+import pandas as pd
+from django.shortcuts import render
+from django.contrib.auth import get_user_model
+from course.models import Program
+from .models import Student
+
+User = get_user_model()
+
+def import_students(request):
+    if request.method == 'POST':
+        # Get the uploaded file from the request
+        file = request.FILES.get('file')
+
+        # Load the file into a pandas DataFrame
+        df = pd.read_excel(file)
+
+        # Loop through each row in the DataFrame
+        for index, row in df.iterrows():
+            # Create a new User object with the data from the row
+            user = User.objects.create(
+                username=row['Username'],
+                first_name=row['First Name'],
+                last_name=row['Last Name'],
+                email=row['Email'],
+                phone=row['Phone'],
+                address=row['Address']
+            )
+            
+            # Set the password for the user (assuming it is provided as plain text)
+            user.set_password(row['Password'])
+
+            # Save the User object
+            user.save()
+
+            # Create a new Student object and relate it to the User object
+            department_name = row['Department']
+            department = Program.objects.get(title=department_name)
+            student = Student.objects.create(
+                student=user,
+                department=department
+            )
+
+            # Save the Student object
+            student.save()
+
+        # Return a success message
+        return render(request, 'accounts/import_success.html')
+
+    # If the request method is not POST, render the template with the form
+    return render(request, 'accounts/import_students.html')
+

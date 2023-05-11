@@ -9,7 +9,7 @@ from .views import (
         LecturerListView, StudentListView, 
         staff_add_view, edit_staff, 
         delete_staff, student_add_view, 
-        edit_student, delete_student, ParentAdd, validate_username, register
+        edit_student, delete_student, ParentAdd, validate_username, register,import_students
     )
 from .forms import EmailValidationOnForgotPassword
 
@@ -39,6 +39,7 @@ urlpatterns = [
     path('ajax/validate-username/', validate_username, name='validate_username'),
 
     path('register/', register, name='register'),
+    path('import_students/', import_students, name='import_students'),
 
     # path('add-student/', StudentAddView.as_view(), name='add_student'),
 
