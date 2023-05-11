@@ -367,8 +367,11 @@ def import_students(request):
                 last_name=row['Last Name'],
                 email=row['Email'],
                 phone=row['Phone'],
-                address=row['Address']
+                address=row['Address'],
+                is_student=True
             )
+
+            
             
             # Set the password for the user (assuming it is provided as plain text)
             user.set_password(row['Password'])
