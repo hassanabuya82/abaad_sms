@@ -203,4 +203,4 @@ REST_FRAMEWORK = {
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 
-CSRF_TRUSTED_ORIGINS = ['https://abaadsms-production-67c3.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-4465.up.railway.app/']
