@@ -141,7 +141,9 @@ class Student(models.Model):
 
     def delete(self, *args, **kwargs):
         self.student.delete()
-        super().delete(*args, **kwargs)
+        super().delete(*args, **kwargs)    
+    class Meta:
+        ordering = ['student__first_name', 'student__last_name']
 
 
 class Parent(models.Model):
