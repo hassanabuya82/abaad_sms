@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.views import get_user_model
-from django.contrib.postgres.fields import ArrayField
 from accounts.models import User
 
 User = get_user_model()
