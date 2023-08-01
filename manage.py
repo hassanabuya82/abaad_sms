@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
-import os
+
 import sys
-import environ
+from os import environ
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SMS.settings')
